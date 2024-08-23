@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Google Maps</title>
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        #search-box {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 5;
+            width: 300px;
+        }
+    </style>
+    <script defer src="./index.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn7kd5uyu5imiicHU_XWGtRNCDLA35zFM&libraries=places&callback=initMap"></script>
+</head>
+<body>
+<input id="search-box" type="text" placeholder="장소 검색">
+<div id="map"></div>
+</body>
+</html>
