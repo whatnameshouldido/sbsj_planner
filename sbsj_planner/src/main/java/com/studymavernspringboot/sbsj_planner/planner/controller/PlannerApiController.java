@@ -4,7 +4,7 @@ package com.studymavernspringboot.sbsj_planner.planner.controller;
 import com.studymavernspringboot.sbsj_planner.planner.Dto.PlanDto;
 import com.studymavernspringboot.sbsj_planner.planner.Service.impl.PlanServiceImpl;
 import com.studymavernspringboot.sbsj_planner.planner.Service.impl.PlannerServiceImpl;
-import com.studymavernspringboot.sbsj_planner.planner.domain.Planner;
+import com.studymavernspringboot.sbsj_planner.planner.domain.PlannerSpot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class PlannerApiController {
 
     @PostMapping("/users/{userid}/planners")
     public ResponseEntity<String> plannerInsert(@RequestBody PlanDto param, @PathVariable("userid") String userId) {
-        Planner planner = plannerService.insertPlanner(param.getPlanner());
+        PlannerSpot planner = plannerService.insertPlanner(param.getPlanner());
     }
 
 }

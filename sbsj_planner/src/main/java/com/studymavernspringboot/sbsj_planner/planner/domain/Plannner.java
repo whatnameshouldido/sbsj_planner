@@ -12,7 +12,7 @@ import lombok.*;
 @ToString
 @Builder
 @SequenceGenerator(name = "PLAN_SEQ_GENERATOR", sequenceName = "PLAN_SEQ", initialValue = 1, allocationSize = 1)
-public class Plan {
+public class Plannner {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PLAN_SEQ_GENERATOR")
