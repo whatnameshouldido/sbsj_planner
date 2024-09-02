@@ -1,8 +1,11 @@
 package com.studymavernspringboot.sbsj_planner.planner.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.Date;
 
 @Entity
 @Table(name="planner_tbl")
@@ -11,11 +14,12 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Builder
-@SequenceGenerator(name = "PLAN_SEQ_GENERATOR", sequenceName = "PLAN_SEQ", initialValue = 1, allocationSize = 1)
+@SequenceGenerator(name = "PLANNER_SEQ_GEN", sequenceName = "PLANNER_SEQ", initialValue = 1, allocationSize = 1)
 public class Plannner {
+
     @Id
     @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PLAN_SEQ_GENERATOR")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PLANNER_SEQ_GEN")
     private Long id;
 
     @Column(name = "title", nullable = false, length = 100)
@@ -25,14 +29,16 @@ public class Plannner {
     private String name;
 
     @Column(name = "startDate", nullable = false)
-    private String startDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date startDate;
 
     @Column(name = "endDate", nullable = false)
-    private String endDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date endDate;
 
-    @Column(name = "memo", length = 100)
+    @Column(name = "memo", nullable = true, length = 100)
     private String memo;
 
     @Column(name = "people", nullable = false)
-    private String people;
+    private int people;
 }

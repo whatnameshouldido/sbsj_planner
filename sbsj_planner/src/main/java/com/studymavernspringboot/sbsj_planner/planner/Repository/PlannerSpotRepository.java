@@ -1,4 +1,4 @@
 package com.studymavernspringboot.sbsj_planner.planner.Repository;
 
-public class PlanRepository {
+public class PlannerSpotRepository {
 }

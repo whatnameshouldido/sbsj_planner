@@ -1,4 +1,4 @@
 package com.studymavernspringboot.sbsj_planner.planner.Service;
 
-public class PlanService {
+public class PlannerSpotService {
 }

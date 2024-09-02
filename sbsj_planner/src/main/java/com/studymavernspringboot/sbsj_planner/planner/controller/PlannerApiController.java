@@ -1,8 +1,8 @@
 package com.studymavernspringboot.sbsj_planner.planner.controller;
 
 
-import com.studymavernspringboot.sbsj_planner.planner.Dto.PlanDto;
-import com.studymavernspringboot.sbsj_planner.planner.Service.impl.PlanServiceImpl;
+import com.studymavernspringboot.sbsj_planner.planner.Dto.PlannerSpotDto;
+import com.studymavernspringboot.sbsj_planner.planner.Service.impl.PlannerSpotServiceImpl;
 import com.studymavernspringboot.sbsj_planner.planner.Service.impl.PlannerServiceImpl;
 import com.studymavernspringboot.sbsj_planner.planner.domain.PlannerSpot;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +16,10 @@ public class PlannerApiController {
     private PlannerServiceImpl plannerService;
 
     @Autowired
-    private PlanServiceImpl planService;
+    private PlannerSpotServiceImpl planService;
 
     @PostMapping("/users/{userid}/planners")
-    public ResponseEntity<String> plannerInsert(@RequestBody PlanDto param, @PathVariable("userid") String userId) {
+    public ResponseEntity<String> plannerInsert(@RequestBody PlannerSpotDto param, @PathVariable("userid") String userId) {
         PlannerSpot planner = plannerService.insertPlanner(param.getPlanner());
     }
 
