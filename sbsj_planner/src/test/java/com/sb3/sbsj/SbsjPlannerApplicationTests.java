@@ -1,4 +1,4 @@
-package com.studymavernspringboot.sbsj_planner;
+package com.sb3.sbsj;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

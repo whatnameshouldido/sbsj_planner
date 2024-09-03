@@ -1,4 +1,4 @@
-package com.studymavernspringboot.sbsj_planner.planner.domain;
+package com.sb3.sbsj.Planner;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -15,12 +15,12 @@ import java.util.Date;
 @ToString
 @Builder
 @SequenceGenerator(name = "PLANNER_SEQ_GEN", sequenceName = "PLANNER_SEQ", initialValue = 1, allocationSize = 1)
-public class Plannner {
+public class Planner {
 
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "planId", nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PLANNER_SEQ_GEN")
-    private Long id;
+    private Long planId;
 
     @Column(name = "title", nullable = false, length = 100)
     private String title;

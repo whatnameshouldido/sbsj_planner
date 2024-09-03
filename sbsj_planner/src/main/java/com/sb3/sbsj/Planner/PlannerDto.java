@@ -1,4 +1,4 @@
-package com.studymavernspringboot.sbsj_planner.planner.Dto;
+package com.sb3.sbsj.Planner;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Data
 public class PlannerDto {
-    private Long id;
+    private Long planId;
     private String title;
     private String name;
 

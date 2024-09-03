@@ -1,4 +1,4 @@
-package com.studymavernspringboot.sbsj_planner.planner.domain;
+package com.sb3.sbsj.Planner;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -18,9 +18,13 @@ import java.util.Date;
 public class PlannerSpot {
 
     @Id
-    @Column(name= "id", nullable = false)
+    @Column(name= "planSpId", nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "PLAN_SPT_SEQ_GEN")
-    private Long id;
+    private Long planSpId;
+
+    @ManyToOne
+    @JoinColumn(name = "planId")
+    private Planner planner;
 
     @Column(name = "nowDate")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
